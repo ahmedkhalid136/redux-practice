@@ -17,7 +17,7 @@ body {
   font-family: 'Nunito', sans-serif;
   width: 100vw;
   height: 90vh;
-  color: #fff;
+  color: black;
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
   -webkit-animation: Gradient 15s ease infinite;
@@ -116,82 +116,32 @@ body {
   color: white;
 }
 
-.Nav{
-  //list-style-type: none;
-  //background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: white;
-  height: 55px;
-  justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
-  z-index: 12;
-}
-
-.Navmenue {
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.Navlink {
-  color: black;
-  display: inline-flex;
-  align-items: center;
-  font-size: large;
-  text-decoration: none;
-  padding: 0 4rem;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color: #000000;
-  }
-  //color: black;
-  //display: inline-flex;
-  //align-items: center;
-  //justify-content: space-between;
-  //text-decoration: none;
-  //font-size: large;
-  //padding: 0 3rem;
-  //cursor: pointer;
-  //
-  //
-  //&.active {
-  //  color: #000000;
-  //}
-}
-
-.navbutton{
-  align-items: last;
-  //display: flex;
-  //align-items: flex-end;
-  //margin-right: 24px;
-  //@media screen and (max-width: 768px) {
-  //  display: none;
-  //}
-  //margin-right: 24px;
-  //border-radius: 4px;
-  //
-  //color: #000000;
-  //outline: none;
-  //border: none;
-  //cursor: pointer;
-  //transition: all 0.2s ease-in-out;
-  ///* Second Nav */
-  //margin-left: 24px;
-  //&:hover {
-  //  transition: all 0.2s ease-in-out;
-  //  background: #fff;
-  //  color: #808080;
-  //}
-}
 
 .category{
   cursor: pointer;
+}
+button{
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding: 8px 16px;
+  position: center;
+
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+.previous {
+  background-color: #04AA6D;
+  color: black;
+}
+.next {
+  background-color: #04AA6D;
+  color: white;
+}
+.menu_active {
+  font-weight: bold;
+  border-bottom: 1px solid #565656;
 }

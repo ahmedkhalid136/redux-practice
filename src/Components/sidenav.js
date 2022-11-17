@@ -4,6 +4,7 @@ import Products from "../Pages/ProductListing/GetProducts";
 import {useState} from "react";
 import "./Component.modular.scss"
 import "../Pages/ProductListing/index.modular.scss"
+import {Link} from "react-router-dom";
 
 
 export default function Sidenav(props){
@@ -13,7 +14,7 @@ export default function Sidenav(props){
     return(
         <div>
             <h2>Filter By:</h2>
-            <h3 className="category" onClick={()=> setTrigger(!trigger)}>Categories</h3>
+            <h3 className="category"  onClick={()=> setTrigger(!trigger)}>Categories</h3>
 
             {
                 trigger ? <Categories setcategory={props.setcategory}/>:""
@@ -26,7 +27,7 @@ export default function Sidenav(props){
             <label> Max</label>
             <input type="number" style={{color: "black"}} onChange={(e)=> props.setMax(parseInt(e.target.value,10))} />
 
-            <button onClick={<Products/>}>Clear Filter</button>
+            <button className="clearfilter" onClick={<Products/>}>Clear Filter</button>
 
 
         </div>

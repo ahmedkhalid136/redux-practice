@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {useState} from "react";
 import firebase from './../../firebase/firebase'
 import "./index.modular.scss"
+import {NavLink} from "react-router-dom";
 
 export default function Categories(props){
     const[categories,setCategories]=useState([])

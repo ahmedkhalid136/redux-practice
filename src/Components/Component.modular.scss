@@ -1,5 +1,16 @@
-.category{
-font-size: x-large;
-color: white;
+.category:hover{
+  background-color: white;
+  color: black;
+}
 
+.clearfilter{
+  display: inline-block;
+  padding: 8px 16px;
+  position: center;
+  background-color: white;
+  color: black;
+}
+.clearfilter:hover {
+  background-color: black;
+  color: white;
 }

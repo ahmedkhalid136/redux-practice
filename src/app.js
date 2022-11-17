@@ -4,6 +4,7 @@ import Home from "./Pages/NavBarPages/Home";
 import Login from "./Pages/NavBarPages/Signin";
 import Register from "./Pages/NavBarPages/SIgnup";
 import ProductLists from "./Pages/ProductListing";
+import Dashboard from "./Pages/NavBarPages/Dashboard";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function App(){
@@ -16,6 +17,7 @@ export default function App(){
                 <Route path='/products' element={<ProductLists/>}/>
                 <Route path='/signin' element={<Login/>}/>
                 <Route path='/signup' element={<Register/>}/>
+                <Route path='/dashboard' element={<Dashboard/>}/>
             </Routes>
         </Router>
     )
