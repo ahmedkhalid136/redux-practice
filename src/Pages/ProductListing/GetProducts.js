@@ -4,6 +4,9 @@ import React, { useState,useEffect } from "react";
 import firebase from "./../../firebase/firebase";
 import Card from "../../Components/Card";
 
+import { useSelector, useDispatch } from "react-redux";
+import { AddToCart } from "../../redux/cart";
+
 import "./index.modular.scss";
 
 export default function Products(props) {
@@ -11,32 +14,9 @@ export default function Products(props) {
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [value, setValue] = useState(6);
-    // const [query, setQuery] = useState("");
-    // const [error, setError] = useState(null);
-
-    // const Item = () => {
-    //     const cart = useSelector((state) => state.cart);
-    //     const dispatch = useDispatch();
-    //
-    //     const addToCart = (item) => {
-    //         const isAdded = cart.some((e) => {
-    //             return e.id === item.id;
-    //         });
-    //
-    //         if (!isAdded) {
-    //             dispatch(
-    //                 cartAction.add({
-    //                     id: item.id,
-    //                     name: item.name,
-    //                     price: item.price,
-    //                     amount: 1
-    //                 })
-    //             );
-    //         } else {
-    //             alert("Already Added");
-    //         }
-    //     };
-
+    const dispatch = useDispatch()
+    const cart = useSelector((state) => state.cart)
+    console.log("CART",cart)
 
         const ShowNext = () => {
             setValue(value + 6);
@@ -123,7 +103,7 @@ export default function Products(props) {
                             description={data.description}
                             price={data.price}
                         />
-                        <button className="card_btn"> Add to cart</button>
+                        <button className="card_btn" onClick={()=> dispatch(AddToCart(data))}> Add to cart</button>
                     </div>
                 ))}
 

@@ -5,6 +5,7 @@ import Login from "./Pages/NavBarPages/Signin";
 import Register from "./Pages/NavBarPages/SIgnup";
 import ProductLists from "./Pages/ProductListing";
 import Dashboard from "./Pages/NavBarPages/Dashboard";
+import Cart from "./Pages/Cart/Cart"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function App(){
@@ -18,6 +19,7 @@ export default function App(){
                 <Route path='/signin' element={<Login/>}/>
                 <Route path='/signup' element={<Register/>}/>
                 <Route path='/dashboard' element={<Dashboard/>}/>
+                <Route path='/cart' element={<Cart/>}/>
             </Routes>
         </Router>
     )

@@ -1,49 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = [{id: "cbwh321", qty:3}];
 
 const cart = createSlice({
-    name: "cart reducer",
+    name: "cart",
     initialState,
     reducers: {
-        add: (state, action) => {
-            return [...state, action.payload];
-        },
-
-        inc: (state, action) => {
-            const newState = state.map((e) => {
-                if (e.id === action.payload) {
-                    e.amount++;
-                }
-                return e;
-            });
-            state = newState;
-        },
-
-        dec: (state, action) => {
-            const newState = state.map((e) => {
-                if (e.id === action.payload) {
-                    if (e.amount > 1) {
-                        e.amount--;
-                    }
-                }
-                return e;
-            });
-            state = newState;
-        },
-
-        remove: (state, action) => {
-            const newState = state.filter((e) => {
-                return e.id !== action.payload;
-            });
-            return newState;
-        },
-
-        reset: () => {
-            return [];
+        AddToCart: (state, action) => {
+            console.log(action)
+            const exist = state.findIndex(element => element.id === action.payload.id)
+            if(exist > -1){
+                state[exist] = {...state[exist], qty: state[exist].qty + 1}
+            }
+            else{
+                state.push({id:action.payload.id, qty: 1})
+            }
         }
     }
-});
+})
 
-export const cartAction = cart.actions;
+function upsert(array, element) { // (1)
+    const i = array.findIndex(_element => _element.id === element.id);
+    if (i > -1) array[i] = element; // (2)
+    else array.push(element);
+  }
+
+export const {AddToCart} = cart.actions 
+
 export default cart.reducer;
